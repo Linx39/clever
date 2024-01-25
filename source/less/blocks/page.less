@@ -7,13 +7,21 @@
   font-family: @font-page;
   font-size: 14px;
   line-height: 20px;
+  font-weight: 400;
   vertical-align: middle;
 
   color: @color-font;
   background-color: @color-back;
+
+  @media (min-width: @desktop-width) {
+    font-size: 16px;
+    line-height: 23px;
+  }
 }
 
 .page__body {
+  position: relative;
+  
   display: grid;
   grid-template-rows: min-content 1fr min-content;
 
