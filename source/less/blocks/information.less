@@ -1,0 +1,143 @@
+.information {
+  .wrapper();
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 14px;
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: 1fr min-content;
+    row-gap: 18px;
+    column-gap: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    row-gap: 18px;
+    column-gap: 80px;
+    padding-right: 237px;
+  }
+}
+
+.information__title {
+  margin: 0;
+  margin-bottom: 2px;
+
+  font-family: @font-title;
+  font-size: 22px;
+  line-height: 31px;
+  font-weight: 500;
+  text-align: center;
+
+  @media (min-width: @tablet-width) {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-left: 39px;
+    margin-bottom: 31px;
+  }
+}
+
+.information__subtitle {
+  margin: 0;
+  padding-top: 12px;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+
+  @media (min-width: @tablet-width) {
+    grid-row: 2 / 3;
+
+    padding-top: 13px;
+
+    font-size: 18px;
+    line-height: 25px;
+
+    &--description {
+      grid-column: 1 / 2;
+    }
+
+    &--demo {
+      grid-column: 2 / -1;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.information__description {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+
+.information__demo {
+  position: relative;
+
+  padding-top: 5px;
+
+  @media (min-width: @tablet-width) {
+    grid-row: 3 / 4;
+    grid-column: 2 / -1;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 4px;
+  }
+}
+
+.information__description span {
+  display: block;
+
+  &:not(:last-of-type) {
+    margin-bottom: 12px;
+  }
+}
+
+.information__img {
+  min-width: 290px;
+  min-height: 262px;
+  margin: 0 auto;
+
+  border-radius: 12px;
+
+  @media (min-width: @tablet-width) {
+    min-width: 354px;
+    min-height: 262px;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-width: 431px;
+    min-height: 231px;
+  }
+}
+
+.information__btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
