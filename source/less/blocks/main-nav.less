@@ -2,12 +2,14 @@
   // position: fixed;
   z-index: 10;
 
-  .wrapper-main-nav();
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: minmax(77px, min-content);
   column-gap: 15px;
   align-items: center;
+
+  .wrapper-adaptive;
+  .wrapper-padding;
 
   background-color: @color-back;
 
@@ -21,6 +23,9 @@
     position: static;
     column-gap: 57px;
     grid-template-rows: minmax(103px, min-content);
+
+    padding-left: @desktop-padding - 100px;
+    padding-right: @desktop-padding - 100px;
   }
 }
 

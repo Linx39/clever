@@ -1,10 +1,4 @@
-.list () {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.button {
+.btn {
   display: inline-block;
   box-sizing: border-box;
   padding: 0;
@@ -16,7 +10,21 @@
   cursor: pointer;
 }
 
-.wrapper-content {
+.wrapper-fix {
+  box-sizing: border-box;
+  max-width: @mobile-width;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    max-width: @tablet-width;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: @desktop-width;
+  }
+}
+
+.wrapper-adaptive {
   box-sizing: border-box;
   width: 100%;
 
@@ -26,8 +34,7 @@
   }
 }
 
-.wrapper {
-  .wrapper-content();
+.wrapper-padding {
   padding-left: @mobile-padding;
   padding-right: @mobile-padding;
 
@@ -42,17 +49,19 @@
   }
 }
 
-.wrapper-main-nav {
-  .wrapper;
+// .wrapper-main-nav {
+//   .wrapper-adaptive;
+//   .wrapper-padding;
 
-  @media (min-width: @desktop-width) {
-    padding-left: @desktop-padding - 100px;
-    padding-right: @desktop-padding - 100px;
-  }
-}
+//   @media (min-width: @desktop-width) {
+//     padding-left: @desktop-padding - 100px;
+//     padding-right: @desktop-padding - 100px;
+//   }
+// }
 
 .wrapper-intro {
-  .wrapper;
+  .wrapper-fix;
+  .wrapper-padding;
 
   @media (max-width: (@tablet-width - 1)) {
     padding-left: @mobile-padding + 10px;
@@ -60,14 +69,14 @@
   }
 }
 
-.wrapper-footer {
-  .wrapper();
+// .wrapper-footer {
+//   .wrapper();
 
-  @media (min-width: @desktop-width) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+//   @media (min-width: @desktop-width) {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+// }
 
 .interactive-styles {
   &:hover {
@@ -97,7 +106,6 @@
     url("@{img-src}@{file-prefix}@{file-suffix}.png") type("image/png") 1x,
     url("@{img-src}@{file-prefix}@{file-suffix}@2x.png") type("image/png") 2x,
   );
-  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -118,6 +126,17 @@
 
 .intro-back() {
   .retina-back(@intro-back-path, @intro-file-prefix);
+  background-size: 100% 304px;
+  background-position: bottom center;
+
+  @media (min-width: @tablet-width) {
+    background-size: 100% 441px;
+    // background-position: top center;
+  }
+
+  @media (min-width: @desktop-width) {
+    background-size: 100% 512px;
+  }
 }
 
 @advantages-back-path: "@{img-path}advantages-back/";
@@ -137,4 +156,15 @@
   @media (min-width: @desktop-width) {
     background-position: top left 49.6%;
   }
+}
+
+
+@price-back-path: "@{img-path}price-back/";
+@price-file-prefix: "price-back";
+
+.price-back() {
+  .retina-back(@price-back-path, @price-file-prefix);
+
+  background-size: cover;
+  // background-position: bottom center;
 }

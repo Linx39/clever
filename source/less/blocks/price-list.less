@@ -1,0 +1,127 @@
+.price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    column-gap: 41px;
+  }
+}
+
+.price-list__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 23px;
+
+  box-sizing: border-box;
+  width: 290px;
+  padding: 36px 15px 42px 15px;
+
+  border-radius: 12px;
+  border: 3px solid;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    width: 206px;
+  }
+
+  @media (min-width: @desktop-width) {
+    gap: 28px;
+
+    width: 321px;
+    padding-top: 41px;
+    padding-bottom: 47px;
+  }
+
+  &:nth-of-type(1) {
+    border-color: @color-btn-blue;
+  }
+
+  &:nth-of-type(2) {
+    border-color: @color-btn-orange;
+  }
+
+  &:nth-of-type(3) {
+    border-color: @color-btn-pink;
+  }
+}
+
+.price-list__title {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.price-list__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 3px;
+}
+
+.price-list__timetable,
+.price-list__duration,
+.price-list__cost {
+  margin: 0;
+}
+
+.price-list__value {
+  position: relative;
+
+  padding-right: 16px;
+  margin-right: 10px;
+
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 11px;
+    height: 14px;
+    margin: auto 0;
+
+    background-image: url("../img/currency.svg");
+    background-size: 11px 14px;
+    background-repeat: no-repeat;
+  }
+}
+
+.price-list__btn {
+  padding: 11px 28px 11px 28px;
+
+  @media (min-width: @desktop-width) {
+    padding: 14px 35px 14px 35px;
+  }
+}
+
+.price-list__item:nth-child(1) .price-list__btn {
+  .app-btn__back(@color-btn-blue);
+}
+
+.price-list__item:nth-child(2) .price-list__btn {
+  .app-btn__back(@color-btn-orange);
+}
+
+.price-list__item:nth-child(3) .price-list__btn {
+  .app-btn__back(@color-btn-pink);
+}
