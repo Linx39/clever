@@ -49,35 +49,6 @@
   }
 }
 
-// .wrapper-main-nav {
-//   .wrapper-adaptive;
-//   .wrapper-padding;
-
-//   @media (min-width: @desktop-width) {
-//     padding-left: @desktop-padding - 100px;
-//     padding-right: @desktop-padding - 100px;
-//   }
-// }
-
-.wrapper-intro {
-  .wrapper-fix;
-  .wrapper-padding;
-
-  @media (max-width: (@tablet-width - 1)) {
-    padding-left: @mobile-padding + 10px;
-    padding-right: @mobile-padding + 10px;
-  }
-}
-
-// .wrapper-footer {
-//   .wrapper();
-
-//   @media (min-width: @desktop-width) {
-//     padding-left: 0;
-//     padding-right: 0;
-//   }
-// }
-
 .interactive-styles {
   &:hover {
     color: @color-btn-orange;
@@ -126,16 +97,14 @@
 
 .intro-back() {
   .retina-back(@intro-back-path, @intro-file-prefix);
-  background-size: 100% 304px;
+  background-size: cover;
   background-position: bottom center;
 
   @media (min-width: @tablet-width) {
-    background-size: 100% 441px;
-    // background-position: top center;
+    background-position: top center;
   }
 
   @media (min-width: @desktop-width) {
-    background-size: 100% 512px;
   }
 }
 
@@ -150,7 +119,7 @@
 
   @media (min-width: @tablet-width) {
     background-size: auto;
-    background-position: top 13px left 56.3%;
+    background-position: top 13px left 56.5%;
   }
 
   @media (min-width: @desktop-width) {
@@ -158,13 +127,26 @@
   }
 }
 
-
 @price-back-path: "@{img-path}price-back/";
 @price-file-prefix: "price-back";
 
 .price-back() {
   .retina-back(@price-back-path, @price-file-prefix);
 
+  @media (max-width: (@tablet-width - 1)) {
+    background-image: none;
+  }
+
   background-size: cover;
-  // background-position: bottom center;
+  background-position: center;
+}
+
+@offer-back-path: "@{img-path}offer-back/";
+@offer-file-prefix: "offer-back";
+
+.offer-back() {
+  .retina-back(@offer-back-path, @offer-file-prefix);
+
+  background-size: cover;
+  background-position: center;
 }

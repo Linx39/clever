@@ -1,0 +1,32 @@
+.controls {
+
+}
+
+.controls__btn {
+  position: relative;
+  width: 21px;
+  height: 14px;
+
+  .btn();
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 17px;
+    height: 10px;
+    margin: auto;
+
+    background-image: url("../../img/arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 17px 10px;
+  }
+
+  &--next::before {
+    transform: rotate(180deg);
+  }
+}

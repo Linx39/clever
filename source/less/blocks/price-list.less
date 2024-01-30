@@ -4,13 +4,16 @@
   gap: 30px;
 
   @media (min-width: @tablet-width) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 30px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // column-gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: unset;
   }
 
   @media (min-width: @desktop-width) {
-    column-gap: 41px;
+    // column-gap: 41px;
   }
 }
 
@@ -38,7 +41,7 @@
   @media (min-width: @desktop-width) {
     gap: 28px;
 
-    width: 321px;
+    width: 296px;
     padding-top: 41px;
     padding-bottom: 47px;
   }
@@ -108,6 +111,8 @@
 
 .price-list__btn {
   padding: 11px 28px 11px 28px;
+
+  font-weight: 500;
 
   @media (min-width: @desktop-width) {
     padding: 14px 35px 14px 35px;
