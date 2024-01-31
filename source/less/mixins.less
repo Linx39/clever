@@ -65,10 +65,25 @@
   }
 }
 
+.interactive-styles-default {
+  &:hover {
+    opacity: 0.4;
+  }
+
+  &:focus-visible {
+    opacity: 0.4;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
 @img-path: "../img/";
-@mobile: "--mobile";
-@tablet: "--tablet";
-@desktop: "--desktop";
+@mobile: "-mobile";
+@tablet: "-tablet";
+@desktop: "-desktop";
 
 .back(@img-src, @file-prefix, @file-suffix) {
   background-image: image-set(
@@ -93,15 +108,22 @@
 }
 
 @intro-back-path: "@{img-path}intro-back/";
-@intro-file-prefix: "intro-back";
+@intro-file-prefix: "intro";
 
 .intro-back() {
-  .retina-back(@intro-back-path, @intro-file-prefix);
-  background-size: cover;
-  background-position: bottom center;
+  .double-back(@intro-back-path, @intro-file-prefix);
+  // background-size: cover;
+  // background-position: bottom center;
 
   @media (min-width: @tablet-width) {
+    .retina-back(@intro-back-path, @intro-file-prefix);
+    background-size: cover;
     background-position: top center;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 
   @media (min-width: @desktop-width) {
@@ -109,7 +131,7 @@
 }
 
 @advantages-back-path: "@{img-path}advantages-back/";
-@advantages-file-prefix: "advantages-back";
+@advantages-file-prefix: "advantages";
 
 .advantages-back() {
   .retina-back(@advantages-back-path, @advantages-file-prefix);
@@ -127,26 +149,57 @@
   }
 }
 
-@price-back-path: "@{img-path}price-back/";
-@price-file-prefix: "price-back";
+.double-back(@back-path, @file-prefix) {
+  position: relative;
 
-.price-back() {
-  .retina-back(@price-back-path, @price-file-prefix);
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
 
-  @media (max-width: (@tablet-width - 1)) {
-    background-image: none;
+    width: 100%;
+    height: 50%;
+
+    .retina-back(@back-path, @file-prefix);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
   }
 
-  background-size: cover;
-  background-position: center;
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    bottom: 0;
+
+    width: 100%;
+    height: 50%;
+
+    .retina-back(@back-path, @file-prefix);
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+  }
 }
 
 @offer-back-path: "@{img-path}offer-back/";
-@offer-file-prefix: "offer-back";
+@offer-file-prefix: "offer";
 
 .offer-back() {
-  .retina-back(@offer-back-path, @offer-file-prefix);
+  .double-back(@offer-back-path, @offer-file-prefix);
+}
 
-  background-size: cover;
-  background-position: center;
+@price-back-path: "@{img-path}price-back/";
+@price-file-prefix: "price";
+
+.price-back() {
+  .double-back(@price-back-path, @price-file-prefix);
+
+  @media (max-width: (@tablet-width - 1)) {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
 }

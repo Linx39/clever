@@ -82,6 +82,16 @@
   color: #ffd787;
   opacity: 0.3;
 }
+.interactive-styles-default:hover {
+  opacity: 0.4;
+}
+.interactive-styles-default:focus-visible {
+  opacity: 0.4;
+  outline: none;
+}
+.interactive-styles-default:active {
+  opacity: 0.2;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -519,11 +529,7 @@ ul {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  background-image: -webkit-image-set(url("../img/intro-back/intro-back--mobile.webp") type("image/webp") 1x, url("../img/intro-back/intro-back--mobile@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-back--mobile.png") type("image/png") 1x, url("../img/intro-back/intro-back--mobile@2x.png") type("image/png") 2x);
-  background-image: image-set(url("../img/intro-back/intro-back--mobile.webp") type("image/webp") 1x, url("../img/intro-back/intro-back--mobile@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-back--mobile.png") type("image/png") 1x, url("../img/intro-back/intro-back--mobile@2x.png") type("image/png") 2x);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom center;
+  position: relative;
 }
 @media (min-width: 768px) {
   .intro {
@@ -539,23 +545,85 @@ ul {
     padding-bottom: 160px;
   }
 }
+.intro::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-image: -webkit-image-set(url("../img/intro-back/intro-mobile.webp") type("image/webp") 1x, url("../img/intro-back/intro-mobile@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-mobile.png") type("image/png") 1x, url("../img/intro-back/intro-mobile@2x.png") type("image/png") 2x);
+  background-image: image-set(url("../img/intro-back/intro-mobile.webp") type("image/webp") 1x, url("../img/intro-back/intro-mobile@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-mobile.png") type("image/png") 1x, url("../img/intro-back/intro-mobile@2x.png") type("image/png") 2x);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
 @media (min-width: 768px) {
-  .intro {
-    background-image: -webkit-image-set(url("../img/intro-back/intro-back--tablet.webp") type("image/webp") 1x, url("../img/intro-back/intro-back--tablet@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-back--tablet.png") type("image/png") 1x, url("../img/intro-back/intro-back--tablet@2x.png") type("image/png") 2x);
-    background-image: image-set(url("../img/intro-back/intro-back--tablet.webp") type("image/webp") 1x, url("../img/intro-back/intro-back--tablet@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-back--tablet.png") type("image/png") 1x, url("../img/intro-back/intro-back--tablet@2x.png") type("image/png") 2x);
+  .intro::before {
+    background-image: -webkit-image-set(url("../img/intro-back/intro-tablet.webp") type("image/webp") 1x, url("../img/intro-back/intro-tablet@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-tablet.png") type("image/png") 1x, url("../img/intro-back/intro-tablet@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/intro-back/intro-tablet.webp") type("image/webp") 1x, url("../img/intro-back/intro-tablet@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-tablet.png") type("image/png") 1x, url("../img/intro-back/intro-tablet@2x.png") type("image/png") 2x);
     background-repeat: no-repeat;
   }
 }
 @media (min-width: 1366px) {
-  .intro {
-    background-image: -webkit-image-set(url("../img/intro-back/intro-back--desktop.webp") type("image/webp") 1x, url("../img/intro-back/intro-back--desktop@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-back--desktop.png") type("image/png") 1x, url("../img/intro-back/intro-back--desktop@2x.png") type("image/png") 2x);
-    background-image: image-set(url("../img/intro-back/intro-back--desktop.webp") type("image/webp") 1x, url("../img/intro-back/intro-back--desktop@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-back--desktop.png") type("image/png") 1x, url("../img/intro-back/intro-back--desktop@2x.png") type("image/png") 2x);
+  .intro::before {
+    background-image: -webkit-image-set(url("../img/intro-back/intro-desktop.webp") type("image/webp") 1x, url("../img/intro-back/intro-desktop@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-desktop.png") type("image/png") 1x, url("../img/intro-back/intro-desktop@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/intro-back/intro-desktop.webp") type("image/webp") 1x, url("../img/intro-back/intro-desktop@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-desktop.png") type("image/png") 1x, url("../img/intro-back/intro-desktop@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
+  }
+}
+.intro::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-image: -webkit-image-set(url("../img/intro-back/intro-mobile.webp") type("image/webp") 1x, url("../img/intro-back/intro-mobile@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-mobile.png") type("image/png") 1x, url("../img/intro-back/intro-mobile@2x.png") type("image/png") 2x);
+  background-image: image-set(url("../img/intro-back/intro-mobile.webp") type("image/webp") 1x, url("../img/intro-back/intro-mobile@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-mobile.png") type("image/png") 1x, url("../img/intro-back/intro-mobile@2x.png") type("image/png") 2x);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .intro::after {
+    background-image: -webkit-image-set(url("../img/intro-back/intro-tablet.webp") type("image/webp") 1x, url("../img/intro-back/intro-tablet@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-tablet.png") type("image/png") 1x, url("../img/intro-back/intro-tablet@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/intro-back/intro-tablet.webp") type("image/webp") 1x, url("../img/intro-back/intro-tablet@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-tablet.png") type("image/png") 1x, url("../img/intro-back/intro-tablet@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
+  }
+}
+@media (min-width: 1366px) {
+  .intro::after {
+    background-image: -webkit-image-set(url("../img/intro-back/intro-desktop.webp") type("image/webp") 1x, url("../img/intro-back/intro-desktop@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-desktop.png") type("image/png") 1x, url("../img/intro-back/intro-desktop@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/intro-back/intro-desktop.webp") type("image/webp") 1x, url("../img/intro-back/intro-desktop@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-desktop.png") type("image/png") 1x, url("../img/intro-back/intro-desktop@2x.png") type("image/png") 2x);
     background-repeat: no-repeat;
   }
 }
 @media (min-width: 768px) {
   .intro {
+    background-image: -webkit-image-set(url("../img/intro-back/intro-mobile.webp") type("image/webp") 1x, url("../img/intro-back/intro-mobile@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-mobile.png") type("image/png") 1x, url("../img/intro-back/intro-mobile@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/intro-back/intro-mobile.webp") type("image/webp") 1x, url("../img/intro-back/intro-mobile@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-mobile.png") type("image/png") 1x, url("../img/intro-back/intro-mobile@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: top center;
+  }
+  .intro::before,
+  .intro::after {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .intro {
+    background-image: -webkit-image-set(url("../img/intro-back/intro-tablet.webp") type("image/webp") 1x, url("../img/intro-back/intro-tablet@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-tablet.png") type("image/png") 1x, url("../img/intro-back/intro-tablet@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/intro-back/intro-tablet.webp") type("image/webp") 1x, url("../img/intro-back/intro-tablet@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-tablet.png") type("image/png") 1x, url("../img/intro-back/intro-tablet@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
+  }
+}
+@media (min-width: 768px) and (min-width: 1366px) {
+  .intro {
+    background-image: -webkit-image-set(url("../img/intro-back/intro-desktop.webp") type("image/webp") 1x, url("../img/intro-back/intro-desktop@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-desktop.png") type("image/png") 1x, url("../img/intro-back/intro-desktop@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/intro-back/intro-desktop.webp") type("image/webp") 1x, url("../img/intro-back/intro-desktop@2x.webp") type("image/webp") 2x, url("../img/intro-back/intro-desktop.png") type("image/png") 1x, url("../img/intro-back/intro-desktop@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
   }
 }
 .intro__wrapper {
@@ -600,7 +668,6 @@ ul {
   font-size: 28px;
   line-height: 39px;
   font-weight: 500;
-  letter-spacing: -0.01em;
 }
 @media (min-width: 768px) {
   .intro__title {
@@ -885,8 +952,8 @@ ul {
   max-width: 320px;
   margin: 0 auto;
   padding-top: 30px;
-  background-image: -webkit-image-set(url("../img/advantages-back/advantages-back--mobile.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-back--mobile@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-back--mobile.png") type("image/png") 1x, url("../img/advantages-back/advantages-back--mobile@2x.png") type("image/png") 2x);
-  background-image: image-set(url("../img/advantages-back/advantages-back--mobile.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-back--mobile@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-back--mobile.png") type("image/png") 1x, url("../img/advantages-back/advantages-back--mobile@2x.png") type("image/png") 2x);
+  background-image: -webkit-image-set(url("../img/advantages-back/advantages-mobile.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-mobile@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-mobile.png") type("image/png") 1x, url("../img/advantages-back/advantages-mobile@2x.png") type("image/png") 2x);
+  background-image: image-set(url("../img/advantages-back/advantages-mobile.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-mobile@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-mobile.png") type("image/png") 1x, url("../img/advantages-back/advantages-mobile@2x.png") type("image/png") 2x);
   background-repeat: no-repeat;
   background-size: auto;
   background-position: top 125px center;
@@ -905,15 +972,15 @@ ul {
 }
 @media (min-width: 768px) {
   .advantages {
-    background-image: -webkit-image-set(url("../img/advantages-back/advantages-back--tablet.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-back--tablet@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-back--tablet.png") type("image/png") 1x, url("../img/advantages-back/advantages-back--tablet@2x.png") type("image/png") 2x);
-    background-image: image-set(url("../img/advantages-back/advantages-back--tablet.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-back--tablet@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-back--tablet.png") type("image/png") 1x, url("../img/advantages-back/advantages-back--tablet@2x.png") type("image/png") 2x);
+    background-image: -webkit-image-set(url("../img/advantages-back/advantages-tablet.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-tablet@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-tablet.png") type("image/png") 1x, url("../img/advantages-back/advantages-tablet@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/advantages-back/advantages-tablet.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-tablet@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-tablet.png") type("image/png") 1x, url("../img/advantages-back/advantages-tablet@2x.png") type("image/png") 2x);
     background-repeat: no-repeat;
   }
 }
 @media (min-width: 1366px) {
   .advantages {
-    background-image: -webkit-image-set(url("../img/advantages-back/advantages-back--desktop.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-back--desktop@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-back--desktop.png") type("image/png") 1x, url("../img/advantages-back/advantages-back--desktop@2x.png") type("image/png") 2x);
-    background-image: image-set(url("../img/advantages-back/advantages-back--desktop.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-back--desktop@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-back--desktop.png") type("image/png") 1x, url("../img/advantages-back/advantages-back--desktop@2x.png") type("image/png") 2x);
+    background-image: -webkit-image-set(url("../img/advantages-back/advantages-desktop.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-desktop@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-desktop.png") type("image/png") 1x, url("../img/advantages-back/advantages-desktop@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/advantages-back/advantages-desktop.webp") type("image/webp") 1x, url("../img/advantages-back/advantages-desktop@2x.webp") type("image/webp") 2x, url("../img/advantages-back/advantages-desktop.png") type("image/png") 1x, url("../img/advantages-back/advantages-desktop@2x.png") type("image/png") 2x);
     background-repeat: no-repeat;
   }
 }
@@ -1116,11 +1183,7 @@ ul {
   padding-top: 56px;
   padding-bottom: 60px;
   background-color: #f7fafc;
-  background-image: -webkit-image-set(url("../img/price-back/price-back--mobile.webp") type("image/webp") 1x, url("../img/price-back/price-back--mobile@2x.webp") type("image/webp") 2x, url("../img/price-back/price-back--mobile.png") type("image/png") 1x, url("../img/price-back/price-back--mobile@2x.png") type("image/png") 2x);
-  background-image: image-set(url("../img/price-back/price-back--mobile.webp") type("image/webp") 1x, url("../img/price-back/price-back--mobile@2x.webp") type("image/webp") 2x, url("../img/price-back/price-back--mobile.png") type("image/png") 1x, url("../img/price-back/price-back--mobile@2x.png") type("image/png") 2x);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
 }
 @media (min-width: 768px) {
   .price {
@@ -1135,23 +1198,64 @@ ul {
     padding-bottom: 184px;
   }
 }
+.price::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-image: -webkit-image-set(url("../img/price-back/price-mobile.webp") type("image/webp") 1x, url("../img/price-back/price-mobile@2x.webp") type("image/webp") 2x, url("../img/price-back/price-mobile.png") type("image/png") 1x, url("../img/price-back/price-mobile@2x.png") type("image/png") 2x);
+  background-image: image-set(url("../img/price-back/price-mobile.webp") type("image/webp") 1x, url("../img/price-back/price-mobile@2x.webp") type("image/webp") 2x, url("../img/price-back/price-mobile.png") type("image/png") 1x, url("../img/price-back/price-mobile@2x.png") type("image/png") 2x);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
 @media (min-width: 768px) {
-  .price {
-    background-image: -webkit-image-set(url("../img/price-back/price-back--tablet.webp") type("image/webp") 1x, url("../img/price-back/price-back--tablet@2x.webp") type("image/webp") 2x, url("../img/price-back/price-back--tablet.png") type("image/png") 1x, url("../img/price-back/price-back--tablet@2x.png") type("image/png") 2x);
-    background-image: image-set(url("../img/price-back/price-back--tablet.webp") type("image/webp") 1x, url("../img/price-back/price-back--tablet@2x.webp") type("image/webp") 2x, url("../img/price-back/price-back--tablet.png") type("image/png") 1x, url("../img/price-back/price-back--tablet@2x.png") type("image/png") 2x);
+  .price::before {
+    background-image: -webkit-image-set(url("../img/price-back/price-tablet.webp") type("image/webp") 1x, url("../img/price-back/price-tablet@2x.webp") type("image/webp") 2x, url("../img/price-back/price-tablet.png") type("image/png") 1x, url("../img/price-back/price-tablet@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/price-back/price-tablet.webp") type("image/webp") 1x, url("../img/price-back/price-tablet@2x.webp") type("image/webp") 2x, url("../img/price-back/price-tablet.png") type("image/png") 1x, url("../img/price-back/price-tablet@2x.png") type("image/png") 2x);
     background-repeat: no-repeat;
   }
 }
 @media (min-width: 1366px) {
-  .price {
-    background-image: -webkit-image-set(url("../img/price-back/price-back--desktop.webp") type("image/webp") 1x, url("../img/price-back/price-back--desktop@2x.webp") type("image/webp") 2x, url("../img/price-back/price-back--desktop.png") type("image/png") 1x, url("../img/price-back/price-back--desktop@2x.png") type("image/png") 2x);
-    background-image: image-set(url("../img/price-back/price-back--desktop.webp") type("image/webp") 1x, url("../img/price-back/price-back--desktop@2x.webp") type("image/webp") 2x, url("../img/price-back/price-back--desktop.png") type("image/png") 1x, url("../img/price-back/price-back--desktop@2x.png") type("image/png") 2x);
+  .price::before {
+    background-image: -webkit-image-set(url("../img/price-back/price-desktop.webp") type("image/webp") 1x, url("../img/price-back/price-desktop@2x.webp") type("image/webp") 2x, url("../img/price-back/price-desktop.png") type("image/png") 1x, url("../img/price-back/price-desktop@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/price-back/price-desktop.webp") type("image/webp") 1x, url("../img/price-back/price-desktop@2x.webp") type("image/webp") 2x, url("../img/price-back/price-desktop.png") type("image/png") 1x, url("../img/price-back/price-desktop@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
+  }
+}
+.price::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-image: -webkit-image-set(url("../img/price-back/price-mobile.webp") type("image/webp") 1x, url("../img/price-back/price-mobile@2x.webp") type("image/webp") 2x, url("../img/price-back/price-mobile.png") type("image/png") 1x, url("../img/price-back/price-mobile@2x.png") type("image/png") 2x);
+  background-image: image-set(url("../img/price-back/price-mobile.webp") type("image/webp") 1x, url("../img/price-back/price-mobile@2x.webp") type("image/webp") 2x, url("../img/price-back/price-mobile.png") type("image/png") 1x, url("../img/price-back/price-mobile@2x.png") type("image/png") 2x);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .price::after {
+    background-image: -webkit-image-set(url("../img/price-back/price-tablet.webp") type("image/webp") 1x, url("../img/price-back/price-tablet@2x.webp") type("image/webp") 2x, url("../img/price-back/price-tablet.png") type("image/png") 1x, url("../img/price-back/price-tablet@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/price-back/price-tablet.webp") type("image/webp") 1x, url("../img/price-back/price-tablet@2x.webp") type("image/webp") 2x, url("../img/price-back/price-tablet.png") type("image/png") 1x, url("../img/price-back/price-tablet@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
+  }
+}
+@media (min-width: 1366px) {
+  .price::after {
+    background-image: -webkit-image-set(url("../img/price-back/price-desktop.webp") type("image/webp") 1x, url("../img/price-back/price-desktop@2x.webp") type("image/webp") 2x, url("../img/price-back/price-desktop.png") type("image/png") 1x, url("../img/price-back/price-desktop@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/price-back/price-desktop.webp") type("image/webp") 1x, url("../img/price-back/price-desktop@2x.webp") type("image/webp") 2x, url("../img/price-back/price-desktop.png") type("image/png") 1x, url("../img/price-back/price-desktop@2x.png") type("image/png") 2x);
     background-repeat: no-repeat;
   }
 }
 @media (max-width: 767px) {
-  .price {
-    background-image: none;
+  .price::before,
+  .price::after {
+    display: none;
   }
 }
 .price__wrapper {
@@ -1415,11 +1519,7 @@ ul {
 .offer {
   padding-top: 65px;
   padding-bottom: 70px;
-  background-image: -webkit-image-set(url("../img/offer-back/offer-back--mobile.webp") type("image/webp") 1x, url("../img/offer-back/offer-back--mobile@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-back--mobile.png") type("image/png") 1x, url("../img/offer-back/offer-back--mobile@2x.png") type("image/png") 2x);
-  background-image: image-set(url("../img/offer-back/offer-back--mobile.webp") type("image/webp") 1x, url("../img/offer-back/offer-back--mobile@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-back--mobile.png") type("image/png") 1x, url("../img/offer-back/offer-back--mobile@2x.png") type("image/png") 2x);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
 }
 @media (min-width: 768px) {
   .offer {
@@ -1433,17 +1533,57 @@ ul {
     padding-bottom: 100px;
   }
 }
+.offer::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-image: -webkit-image-set(url("../img/offer-back/offer-mobile.webp") type("image/webp") 1x, url("../img/offer-back/offer-mobile@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-mobile.png") type("image/png") 1x, url("../img/offer-back/offer-mobile@2x.png") type("image/png") 2x);
+  background-image: image-set(url("../img/offer-back/offer-mobile.webp") type("image/webp") 1x, url("../img/offer-back/offer-mobile@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-mobile.png") type("image/png") 1x, url("../img/offer-back/offer-mobile@2x.png") type("image/png") 2x);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
 @media (min-width: 768px) {
-  .offer {
-    background-image: -webkit-image-set(url("../img/offer-back/offer-back--tablet.webp") type("image/webp") 1x, url("../img/offer-back/offer-back--tablet@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-back--tablet.png") type("image/png") 1x, url("../img/offer-back/offer-back--tablet@2x.png") type("image/png") 2x);
-    background-image: image-set(url("../img/offer-back/offer-back--tablet.webp") type("image/webp") 1x, url("../img/offer-back/offer-back--tablet@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-back--tablet.png") type("image/png") 1x, url("../img/offer-back/offer-back--tablet@2x.png") type("image/png") 2x);
+  .offer::before {
+    background-image: -webkit-image-set(url("../img/offer-back/offer-tablet.webp") type("image/webp") 1x, url("../img/offer-back/offer-tablet@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-tablet.png") type("image/png") 1x, url("../img/offer-back/offer-tablet@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/offer-back/offer-tablet.webp") type("image/webp") 1x, url("../img/offer-back/offer-tablet@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-tablet.png") type("image/png") 1x, url("../img/offer-back/offer-tablet@2x.png") type("image/png") 2x);
     background-repeat: no-repeat;
   }
 }
 @media (min-width: 1366px) {
-  .offer {
-    background-image: -webkit-image-set(url("../img/offer-back/offer-back--desktop.webp") type("image/webp") 1x, url("../img/offer-back/offer-back--desktop@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-back--desktop.png") type("image/png") 1x, url("../img/offer-back/offer-back--desktop@2x.png") type("image/png") 2x);
-    background-image: image-set(url("../img/offer-back/offer-back--desktop.webp") type("image/webp") 1x, url("../img/offer-back/offer-back--desktop@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-back--desktop.png") type("image/png") 1x, url("../img/offer-back/offer-back--desktop@2x.png") type("image/png") 2x);
+  .offer::before {
+    background-image: -webkit-image-set(url("../img/offer-back/offer-desktop.webp") type("image/webp") 1x, url("../img/offer-back/offer-desktop@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-desktop.png") type("image/png") 1x, url("../img/offer-back/offer-desktop@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/offer-back/offer-desktop.webp") type("image/webp") 1x, url("../img/offer-back/offer-desktop@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-desktop.png") type("image/png") 1x, url("../img/offer-back/offer-desktop@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
+  }
+}
+.offer::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-image: -webkit-image-set(url("../img/offer-back/offer-mobile.webp") type("image/webp") 1x, url("../img/offer-back/offer-mobile@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-mobile.png") type("image/png") 1x, url("../img/offer-back/offer-mobile@2x.png") type("image/png") 2x);
+  background-image: image-set(url("../img/offer-back/offer-mobile.webp") type("image/webp") 1x, url("../img/offer-back/offer-mobile@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-mobile.png") type("image/png") 1x, url("../img/offer-back/offer-mobile@2x.png") type("image/png") 2x);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .offer::after {
+    background-image: -webkit-image-set(url("../img/offer-back/offer-tablet.webp") type("image/webp") 1x, url("../img/offer-back/offer-tablet@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-tablet.png") type("image/png") 1x, url("../img/offer-back/offer-tablet@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/offer-back/offer-tablet.webp") type("image/webp") 1x, url("../img/offer-back/offer-tablet@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-tablet.png") type("image/png") 1x, url("../img/offer-back/offer-tablet@2x.png") type("image/png") 2x);
+    background-repeat: no-repeat;
+  }
+}
+@media (min-width: 1366px) {
+  .offer::after {
+    background-image: -webkit-image-set(url("../img/offer-back/offer-desktop.webp") type("image/webp") 1x, url("../img/offer-back/offer-desktop@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-desktop.png") type("image/png") 1x, url("../img/offer-back/offer-desktop@2x.png") type("image/png") 2x);
+    background-image: image-set(url("../img/offer-back/offer-desktop.webp") type("image/webp") 1x, url("../img/offer-back/offer-desktop@2x.webp") type("image/webp") 2x, url("../img/offer-back/offer-desktop.png") type("image/png") 1x, url("../img/offer-back/offer-desktop@2x.png") type("image/png") 2x);
     background-repeat: no-repeat;
   }
 }
@@ -1538,6 +1678,187 @@ ul {
     padding: 14px 35px 14px 35px;
   }
 }
+.social-list {
+  display: flex;
+  gap: 15px;
+}
+.social-list__link {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.social-list__link--facebook {
+  background-image: url("../../img/facebook.svg");
+  background-size: 6px 12px;
+}
+.social-list__link--vk {
+  background-image: url("../../img/vk.svg");
+  background-size: 14px 8px;
+}
+.social-list__link--instagram {
+  background-image: url("../../img/instagram.svg");
+  background-size: 12px 12px;
+}
+.social-list__link:hover {
+  opacity: 0.4;
+}
+.social-list__link:focus-visible {
+  opacity: 0.4;
+  outline: none;
+}
+.social-list__link:active {
+  opacity: 0.2;
+}
+.contacts {
+  padding-top: 53px;
+  padding-bottom: 60px;
+  border-radius: 12px 12px 0 0;
+  background-color: #f7fafc;
+  box-shadow: 0 4px 40px 0 rgba(217, 217, 217, 0.3);
+}
+.contacts__wrapper {
+  box-sizing: border-box;
+  max-width: 320px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .contacts__wrapper {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1366px) {
+  .contacts__wrapper {
+    max-width: 1366px;
+  }
+}
+@media (min-width: 768px) {
+  .contacts__wrapper {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+@media (min-width: 1366px) {
+  .contacts__wrapper {
+    padding-left: 198px;
+    padding-right: 198px;
+  }
+}
+@media (min-width: 1366px) {
+  .contacts__wrapper {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+.contacts__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-family: "Rubik", sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .contacts__title {
+    font-size: 36px;
+    line-height: 45px;
+  }
+}
+.contacts__list {
+  display: grid;
+  row-gap: 20px;
+}
+@media (min-width: 768px) {
+  .contacts__list {
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+  }
+}
+@media (min-width: 1366px) {
+  .contacts__list {
+    grid-template-columns: auto;
+  }
+}
+.contacts__item {
+  max-width: 290px;
+}
+.contacts__item-title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .contacts__item-title {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+.contacts__item-description {
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .contacts__item-description {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+.contacts__item-link {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.contacts__item-link:hover {
+  color: #ffd787;
+}
+.contacts__item-link:focus-visible {
+  color: #ffd787;
+  outline: none;
+}
+.contacts__item-link:active {
+  color: #ffd787;
+  opacity: 0.3;
+}
+.map__img {
+  width: 100%;
+  height: auto;
+}
+.company {
+  position: relative;
+}
+@media (min-width: 1366px) {
+  .company__contacts {
+    position: absolute;
+    left: 198px;
+    top: -70px;
+  }
+}
 .page-main__intro {
   margin-bottom: 53px;
 }
@@ -1600,6 +1921,19 @@ ul {
 }
 @media (min-width: 1366px) {
   .page-main__personal {
+    margin-bottom: 130px;
+  }
+}
+.page-main__offer {
+  margin-bottom: 53px;
+}
+@media (min-width: 768px) {
+  .page-main__offer {
+    margin-bottom: 105px;
+  }
+}
+@media (min-width: 1366px) {
+  .page-main__offer {
     margin-bottom: 130px;
   }
 }
