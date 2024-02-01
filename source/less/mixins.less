@@ -107,28 +107,40 @@
   }
 }
 
-@intro-back-path: "@{img-path}intro-back/";
+@intro-back-path: "@{img-path}intro/";
 @intro-file-prefix: "intro";
 
 .intro-back() {
-  .double-back(@intro-back-path, @intro-file-prefix);
-  // background-size: cover;
-  // background-position: bottom center;
+  .back(@intro-back-path, @intro-file-prefix, @mobile);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
 
   @media (min-width: @tablet-width) {
-    .retina-back(@intro-back-path, @intro-file-prefix);
-    background-size: cover;
-    background-position: top center;
-
-    &::before,
-    &::after {
-      display: none;
-    }
+    background-image: none;
   }
 
   @media (min-width: @desktop-width) {
   }
 }
+
+// .intro-back() {
+//   .double-back(@intro-back-path, @intro-file-prefix);
+
+//   @media (min-width: @tablet-width) {
+//     .retina-back(@intro-back-path, @intro-file-prefix);
+//     background-size: cover;
+//     background-position: top center;
+
+//     &::before,
+//     &::after {
+//       display: none;
+//     }
+//   }
+
+//   @media (min-width: @desktop-width) {
+//   }
+// }
 
 @advantages-back-path: "@{img-path}advantages-back/";
 @advantages-file-prefix: "advantages";
