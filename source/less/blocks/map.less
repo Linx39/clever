@@ -1,5 +1,30 @@
-.map {
-  // .wrapper-adaptive();
+.map__img-container {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 31.4%;
+    left: 37.8%;
+
+    width: 32px;
+    height: 39px;
+
+    background-image: url("../../img/location.svg");
+    background-size: 32px 39px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: @tablet-width) {
+      top: 35.8%;
+      left: 46%;
+    }
+
+    @media (min-width: @desktop-width) {
+      top: 27%;
+      left: 49.6%;
+    }
+  }
 }
 
 .map__img {
