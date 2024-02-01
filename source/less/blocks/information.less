@@ -137,9 +137,14 @@
 
 .information__btn {
   position: absolute;
-  top: 0;
+  top: 5px;
   bottom: 0;
   left: 0;
   right: 0;
+
   margin: auto;
+
+  @media (min-width: @tablet-width) {
+    top: 0;
+  }
 }
