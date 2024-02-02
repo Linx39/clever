@@ -3,12 +3,12 @@
   padding-bottom: 70px;
 
   @media (min-width: @tablet-width) {
-    padding-top: 112px;
+    padding-top: 110px;
     padding-bottom: 100px;
   }
 
   @media (min-width: @desktop-width) {
-    padding-top: 86px;
+    padding-top: 90px;
     padding-bottom: 100px;
   }
 
@@ -24,8 +24,12 @@
   .wrapper-fix;
   .wrapper-padding;
 
+  @media (min-width: @tablet-width) {
+    gap: 16px;
+  }
+
   @media (min-width: @desktop-width) {
-    gap: 21px;
+    gap: 20px;
   }
 }
 
@@ -42,12 +46,14 @@
 
   @media (min-width: @tablet-width) {
     max-width: 500px;
+    margin-left: 12px;
 
     font-size: 36px;
     line-height: 45px;
   }
 
   @media (min-width: @desktop-width) {
+    margin-left: 0;
   }
 }
 
@@ -64,13 +70,14 @@
 
   @media (min-width: @tablet-width) {
     max-width: 320px;
-
-    margin-bottom: 13px;
+    margin-left: 12px;
+    margin-bottom: 14px;
   }
 
   @media (min-width: @desktop-width) {
     max-width: 360px;
-    margin-bottom: 12px;
+    margin-left: 0;
+    margin-bottom: 14px;
 
     font-size: 16px;
     line-height: 23px;
@@ -78,7 +85,8 @@
 }
 
 .offer__btn {
-  padding: 11px 28px 11px 28px;
+  width: 152px;
+  padding: 11px 10px 11px 10px;
 
   font-size: 16px;
   line-height: 22px;
@@ -86,7 +94,13 @@
 
   .app-btn__back(@color-btn-orange);
 
+  @media (min-width: @tablet-width) {
+    margin-right: 2px;
+  }
+
   @media (min-width: @desktop-width) {
-    padding: 14px 35px 14px 35px;
+    width: 166px;
+    margin-right: 1px;
+    padding: 14px 10px 14px 10px;
   }
 }
