@@ -5,17 +5,36 @@
 
   .wrapper-fix;
   .wrapper-padding;
+  padding-top: 53px;
+  padding-bottom: 25px;
+
+  background-image: url("../../img/svg-back/rocket.svg");
+  background-repeat: no-repeat;
+  background-size: 67px 34px;
+  background-position: right 15px top 13px;
 
   @media (min-width: @tablet-width) {
     grid-template-columns: 1fr min-content;
     row-gap: 18px;
     column-gap: 40px;
+
+    padding-top: 98px;
+    padding-bottom: 91px;
+
+    background-size: 101px 50px;
+    background-position: right 45px top 60px;
   }
 
   @media (min-width: @desktop-width) {
-    row-gap: 18px;
     column-gap: 80px;
+
+    padding-top: 117px;
+    padding-bottom: 124px;
     padding-right: 237px;
+
+    background-image: url("../../img/svg-back/girl.svg"), url("../../img/svg-back/rocket.svg");
+    background-size: 105px 115px, 135px 68px;
+    background-position: left 37px top 242px, right 156px top 62px;
   }
 }
 

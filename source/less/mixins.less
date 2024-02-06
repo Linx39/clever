@@ -80,34 +80,35 @@
   }
 }
 
-@img-path: "../img/";
-@mobile: "-mobile";
-@tablet: "-tablet";
-@desktop: "-desktop";
-
-.back(@img-src, @file-prefix, @file-suffix) {
+.back(@path, @file-prefix, @file-suffix) {
   background-image: image-set(
-    url("@{img-src}@{file-prefix}@{file-suffix}.webp") type("image/webp") 1x,
-    url("@{img-src}@{file-prefix}@{file-suffix}@2x.webp") type("image/webp") 2x,
-    url("@{img-src}@{file-prefix}@{file-suffix}.png") type("image/png") 1x,
-    url("@{img-src}@{file-prefix}@{file-suffix}@2x.png") type("image/png") 2x,
+    url("@{path}@{file-prefix}@{file-suffix}.webp") type("image/webp") 1x,
+    url("@{path}@{file-prefix}@{file-suffix}@2x.webp") type("image/webp") 2x,
+    url("@{path}@{file-prefix}@{file-suffix}.png") type("image/png") 1x,
+    url("@{path}@{file-prefix}@{file-suffix}@2x.png") type("image/png") 2x,
   );
   background-repeat: no-repeat;
 }
 
-.retina-back(@back-path, @file-prefix) {
-  .back(@back-path, @file-prefix, @mobile);
+@mobile: "-mobile";
+@tablet: "-tablet";
+@desktop: "-desktop";
+
+.retina-back(@path, @file-prefix) {
+  .back(@path, @file-prefix, @mobile);
 
   @media (min-width: @tablet-width) {
-    .back(@back-path, @file-prefix, @tablet);
+    .back(@path, @file-prefix, @tablet);
   }
 
   @media (min-width: @desktop-width) {
-    .back(@back-path, @file-prefix, @desktop);
+    .back(@path, @file-prefix, @desktop);
   }
 }
 
-@intro-back-path: "@{img-path}intro/";
+@img-path: "../img/";
+
+@intro-back-path: "@{img-path}intro-back/";
 @intro-file-prefix: "intro";
 
 .intro-back() {
@@ -119,28 +120,7 @@
   @media (min-width: @tablet-width) {
     background-image: none;
   }
-
-  @media (min-width: @desktop-width) {
-  }
 }
-
-// .intro-back() {
-//   .double-back(@intro-back-path, @intro-file-prefix);
-
-//   @media (min-width: @tablet-width) {
-//     .retina-back(@intro-back-path, @intro-file-prefix);
-//     background-size: cover;
-//     background-position: top center;
-
-//     &::before,
-//     &::after {
-//       display: none;
-//     }
-//   }
-
-//   @media (min-width: @desktop-width) {
-//   }
-// }
 
 @advantages-back-path: "@{img-path}advantages-back/";
 @advantages-file-prefix: "advantages";
@@ -149,7 +129,7 @@
   .retina-back(@advantages-back-path, @advantages-file-prefix);
 
   background-size: auto;
-  background-position: top 125px center;
+  background-position: top 43% center;
 
   @media (min-width: @tablet-width) {
     background-size: auto;

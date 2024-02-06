@@ -1,5 +1,5 @@
 .main-nav {
-  // position: fixed;
+  position: fixed;
   z-index: 10;
 
   display: grid;
@@ -80,7 +80,6 @@
     justify-self: end;
 
     display: block;
-    padding-right: 4px;
   }
 }
 
@@ -88,6 +87,7 @@
   @media (max-width: (@desktop-width - 1)) {
     grid-row: 3 / 4;
     grid-column: 1 / -1;
+    justify-self: start;
 
     display: block;
   }

@@ -1,18 +1,8 @@
 .price {
-  padding-top: 53px;
-  padding-bottom: 60px;
-
-  background-color: @color-back-blue;
+  background-color: @color-back-contrast;
 
   @media (min-width: @tablet-width) {
-    padding-top: 95px;
-    padding-bottom: 109px;
     background-color: inherit;
-  }
-
-  @media (min-width: @desktop-width) {
-    padding-top: 170px;
-    padding-bottom: 184px;
   }
 
   .price-back();
@@ -24,14 +14,32 @@
 
   .wrapper-fix;
   .wrapper-padding;
+  padding-top: 53px;
+  padding-bottom: 60px;
+
+  background-image: url("../../img/svg-back/star.svg");
+  background-repeat: no-repeat;
+  background-size: 39px 40px;
+  background-position: left -5px top 0;
 
   @media (min-width: @tablet-width) {
     grid-template-columns: auto auto;
     row-gap: 44px;
+
+    padding-top: 95px;
+    padding-bottom: 109px;
+
+    background-position: left 25px top 55px;
   }
 
   @media (min-width: @desktop-width) {
     row-gap: 51px;
+
+    padding-top: 170px;
+    padding-bottom: 184px;
+
+    background-size: 56px 58px;
+    background-position: left 133px top 114px;
   }
 }
 
@@ -51,6 +59,7 @@
 }
 
 .price__description {
+  width: 261px;
   margin: 0;
   margin-bottom: 17px;
 
@@ -66,6 +75,7 @@
   }
 
   @media (min-width: @desktop-width) {
+    width: 298px;
     padding-top: 7px;
 
     font-size: 16px;

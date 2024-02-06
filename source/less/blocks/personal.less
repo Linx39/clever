@@ -4,14 +4,33 @@
 
   .wrapper-fix;
   .wrapper-padding;
+  padding-top: 56px;
+  padding-bottom: 54px;
+
+  background-image: url("../../img/svg-back/house.svg");
+  background-repeat: no-repeat;
+  background-size: 30px 48px;
+  background-position: right 15px top 0;
 
   @media (min-width: @tablet-width) {
     grid-template-columns: 1fr 1fr;
     row-gap: 46px;
+
+    padding-top: 104px;
+    padding-bottom: 109px;
+
+    background-image: none;
   }
 
   @media (min-width: @desktop-width) {
     row-gap: 51px;
+
+    padding-top: 118px;
+    padding-bottom: 129px;
+
+    background-image: url("../../img/svg-back/pencil.svg"), url("../../img/svg-back/house.svg");
+    background-size: 44px 132px, 58px 97px;
+    background-position: left 52px top 454px, right 98px top 117px;
   }
 }
 
@@ -88,6 +107,7 @@
 
   @media (min-width: @tablet-width) {
     position: static;
+
     justify-content: center;
     gap: 12px;
   }

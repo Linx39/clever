@@ -1,6 +1,16 @@
 .company {
   position: relative;
   .wrapper-adaptive();
+
+  padding-top: 59px;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 109px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 200px;
+  }
 }
 
 .company__contacts {
@@ -8,7 +18,8 @@
     position: absolute;
     z-index: 1;
     left: @desktop-padding;
-    top: -70px;
+    top: 132px;
+
+    max-width: 413px;
   }
 }
-
