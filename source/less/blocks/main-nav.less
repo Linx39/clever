@@ -32,21 +32,17 @@
 .main-nav--opened {
   @media (max-width: (@desktop-width - 1)) {
     column-gap: 31px;
-    padding-bottom: 46px;
+    padding-bottom: 39px;
+    box-shadow: 0 4px 40px 0 rgba(217, 217, 217, 0.3);
   }
 
   @media (max-width: (@tablet-width - 1)) {
     column-gap: 25px;
-    padding-top: 4px;
-    padding-bottom: 40px;
+    padding-bottom: 33px;
   }
 }
 
 .main-nav__site-toggle {
-  @media (min-width: @tablet-width) {
-    margin-bottom: 1px;
-  }
-
   @media (min-width: @desktop-width) {
     display: none;
   }
@@ -64,12 +60,14 @@
     grid-column: 1 / -1;
 
     display: flex;
-    padding-top: 9px;
-    margin-bottom: 36px;
+    padding-top: 2px;
+    margin-bottom: 22px;
   }
 
   @media (max-width: (@tablet-width - 1)) {
-    padding-top: 4px;
+    padding-top: 0;
+    margin-top: -1px;
+    margin-bottom: 23px;
   }
 }
 
