@@ -33,7 +33,7 @@ export const styles = () => {
 export const html = () => {
   return gulp.src('source/*.html')
   .pipe(htmlmin({ collapseWhitespace: true }))
-  .pipe(gulp.dest('docs'));;
+  .pipe(gulp.dest('docs'));
 }
 
 // Scripts
@@ -85,9 +85,7 @@ export const createSprite = () => {
 // Copy
 export const copy = (done) => {
   gulp.src([
-    'source/fonts/*.ttf',
-    'source/*.ico',
-    'source/*.webmanifest'
+    'source/fonts/*.ttf'
   ], {
     base: "source"
   })
