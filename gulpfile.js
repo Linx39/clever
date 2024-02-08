@@ -25,7 +25,7 @@ export const styles = () => {
     ]))
     .pipe(rename('style.min.css'))
     .pipe(sourcemap.write('.'))
-    .pipe(gulp.dest('docs/css', { sourcemaps: '.' }))
+    .pipe(gulp.dest('docs/css'))
     .pipe(browser.stream());
 }
 
@@ -85,7 +85,7 @@ export const createSprite = () => {
 // Copy
 export const copy = (done) => {
   gulp.src([
-    'source/fonts/*.{woff, ttf}',
+    'source/fonts/*.ttf',
     'source/*.ico',
     'source/*.webmanifest'
   ], {
